@@ -1,0 +1,82 @@
+.wrap-contact {
+    height: 400px;
+}
+
+div#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrap-contact h1 {
+    text-align: center;
+    padding-top: 5vh;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+div#contact {
+    padding: 5vh 0 0;
+}
+
+div#contact form.slide-top {
+    color: #0d6efd;
+    font-size: 1.2rem;
+    flex-basis: 50%;
+    font-style: italic;
+    text-align: start;
+}
+
+div#contact form.slide-top button, div#contact form.slide-top label {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.social-contact div {
+    text-align: start;
+    margin: 3vh 0 7vh;
+}
+
+.social-contact a {
+    text-decoration: none;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.social-contact a i {
+    font-size: 2rem;
+}
+
+
+.wrap-contact img {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+
+@media only screen and (max-width:600px){
+    div#contact {
+        flex-direction: column-reverse;
+        padding: 0 3vw;
+    }
+    
+    .wrap-contact img {
+        height: 100%;
+    }
+    
+    .social-contact span {
+        display: none;
+    }
+    
+    .social-contact.slide-top {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    form.slide-top {
+        padding-bottom: 2vh;
+    }
+}

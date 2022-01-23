@@ -1,0 +1,27 @@
+div#num-talk-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18vh 0 5vh;
+}
+
+.num-talk {
+    flex-basis: 22%;
+    /* box-shadow: 0.5px 0px 6px #212173; */
+    padding: 2%;
+    text-align: center;
+    height: 210px;
+    border-radius: 20px;
+}
+
+
+.num-talk h1 {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: #212173;
+}
+
+/* .num-talk h3 {
+ 
+} */

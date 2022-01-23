@@ -1,0 +1,101 @@
+login component:
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {signin} from "../actions/user"
+import Inputs from "./inputs";
+import { useDispatch } from 'react-redux';
+
+const Login = () => {
+
+    const dispatch = useDispatch();
+    const [fields, setFields] = useState({
+        nameOrMail:     '',
+        password: ''
+    })
+    const {nameOrMail, password} = fields;
+
+    const handleChange = (e) => {
+        setFields({...fields, [e.target.name]: e.target.value});
+    }
+
+    const send = (e) => {
+        e.preventDefault();
+        dispatch(signin({nameOrMail, password}));
+    }
+
+    const login_form = () => (
+        <form onSubmit={send}>
+            <Inputs name="nameOrMail" change={handleChange} label="Email" type="email" value={nameOrMail} />
+            <Inputs name="password" change={handleChange} label="Password" type="password" value={password} />
+            <button type="submit" className="btn btn-primary">Sign in</button>
+        </form>
+    )
+    return(
+        <>
+            {login_form()}
+            <Link to="/register">Register now</Link>
+            <Link to="/forgot-password">Forgot my password</Link>
+        </>
+    )
+}
+
+export default Login
+
+
+
+register component :
+
+import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import {signup} from "../actions/user"
+import {toast} from "react-toastify";
+import {ApiUrl} from "../apiUrl";
+import Loader from "./loader";
+import { Link } from "react-router-dom";
+import Inputs from "./inputs";
+const Register = () => {
+    const [fields, setFields] = useState({
+        name:     '',
+        email:    '',
+        password: '',
+        confirm:  ''
+    })
+    const {name, email, password, confirm} = fields;
+    const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        console.log(ApiUrl);
+        if(e.target.name === 'confirm'){
+            e.target.value !== password ? (e.target.style.backgroundColor = '#ff000042'): (e.target.style.backgroundColor = 'transparent');
+        }
+        setFields({...fields, [e.target.name]: e.target.value});
+        console.log(fields);
+    }
+
+    const send = (e) => {
+        e.preventDefault();
+        password !== confirm ? toast.error('password and confirm are not match') 
+        : dispatch(signup({name, email, password}));
+    }
+
+    const inputCreator = (name,type=name, label) => (
+        <Inputs name={name} value={fields[name]} type={type} label={label} change={handleChange} />
+    )
+
+    const register_form = () => (
+        <form onSubmit={send}>
+            {["name","email","password"].map(item => inputCreator(item))}
+            {inputCreator("confirm","password","Confirm Password")}
+            <button type="submit" className="btn btn-primary">Sign up</button>
+        </form>
+    )
+    return(
+        <>
+            {/* {loading && <Loader />} */}
+            {register_form()}
+            <Link to="/login">I have an acount</Link>
+        </>
+    )
+}
+
+export default Register

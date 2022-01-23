@@ -1,0 +1,52 @@
+#nl-popular{
+    padding: 5vh 0;
+    text-align: center;
+}
+
+.InfiniteCarouselDots{
+    position: relative;
+}
+
+.InfiniteCarouselArrowIcon {
+    width: 50px;    
+    height: 50px;
+    margin-top: -3vh;
+}
+.InfiniteCarouselArrowNextIcon{
+    margin-right: -50px;     
+}
+
+.InfiniteCarouselArrowPrevIcon{
+    margin-left: -50px;
+}
+.InfiniteCarouselArrowIcon:hover {
+    width: 70px;    
+    height: 70px;
+}
+
+
+
+.car-nl h1 {
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    margin: auto;
+    color: white;
+    width: 100%;
+}
+
+.car-nl {
+    position: relative;
+    margin-bottom:12vh;
+}
+
+.car-nl img {
+    height: 200px;
+    vertical-align: text-bottom;
+}
+
+div#nl-popular>h1 {
+    margin: 2vh 0 5vh;
+    text-transform: uppercase;
+    font-weight: 600;
+}

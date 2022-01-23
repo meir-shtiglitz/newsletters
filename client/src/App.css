@@ -1,0 +1,47 @@
+
+.phone{
+    display: none;
+}
+
+h1{
+    font-family:sans-serif;
+}
+
+.slide-left{
+    margin-left: -100%;
+    transition: margin-left 1s ease-in-out;
+}
+.slide-left.show, .show .slide-left{
+    margin-left: 0;
+    /* display: block; */
+}
+
+
+.slide-right{
+    padding-left: 100%;
+    transition: padding-left 1s ease-in-out;
+}
+.slide-right.show, .show .slide-right{
+    padding-left: 0;
+}
+
+
+.slide-top{
+    padding-top: 100%;
+    transition: padding-top 1s ease-in-out;
+}
+.slide-top.show, .show .slide-top{
+    padding-top: 0;
+}
+
+
+@media only screen and (max-width:600px){
+    .phone{
+        display: block;
+    }
+    
+    .navbar-brand img{
+        width: 7vh;
+    }
+    
+}

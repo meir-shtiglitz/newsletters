@@ -1,0 +1,39 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    right: 0;
+    padding: 0 3vh;
+}
+
+img {
+    width: 5vw;
+}
+
+
+/* nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    padding: 0 3vh;
+} */
+
+
+span#navbarDropdown {
+    cursor: pointer;
+}
+
+div#navbarSupportedContent {
+    justify-content: flex-end;
+}
+
+
+a.btn-login {
+    border-radius: 100px;
+    width: 8rem;
+    margin-left: 1vw;
+}
+
+
+
+@media only screen and (max-width:600px){
+    
+}
