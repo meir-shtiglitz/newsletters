@@ -39,7 +39,7 @@ const buildPath = path.join(__dirname, '..', 'client', 'build');
 app.use(express.static(buildPath));
 
 app.get('*', (req, res, next) => {
-  res.sendFile(`${buildPath}/index.html`)
+  res.sendFile(`${buildPath}/index.html`);
 })
 
 

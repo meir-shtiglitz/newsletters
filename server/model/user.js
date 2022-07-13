@@ -5,7 +5,6 @@ const SHA256 = require("crypto-js/sha256");
 const userSchema = new mongoose.Schema({
     name:{
         type: String,
-        required: true,
         trim: true,
         maxlength: 50
     },
@@ -46,23 +45,5 @@ userSchema.methods = {
         }
     }
 }
-// userSchema.virtual('password').set(function(password){
-//     this._password=password;
-//     this.salt=uuidv4();
-//     this.hashed_password = this.encryptPassword(password)
-// }).get(function(){
-//     return this._password
-// })
-
-// userSchema.methods = {
-//     encryptPassword: function(password){
-//         if (!password) return '';
-//         try{
-//             return SHA256.createHmac('sha1',this.salt).update(password).digset('hex')
-//         } catch (err){
-//             return err
-//         }
-//     }
-// }
 
 module.exports = mongoose.model("User", userSchema)
