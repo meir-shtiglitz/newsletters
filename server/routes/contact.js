@@ -4,7 +4,7 @@ const { sendMail } = require('../model/emails');
 
 router.post("/contact/sendmail", async(req, res) => {
     console.log("req.body from route contact",req.body);
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authortization');
     res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
     const {from, msg} = req.body;
