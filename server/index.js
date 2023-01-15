@@ -40,7 +40,7 @@ app.use('/api', routeContact);
 
 
 // trieng to load the client from server
-const buildPath = path.join(__dirname, '..', 'client', 'build');
+const buildPath = path.join(__dirname, 'build');
 app.use(express.static(buildPath));
 
 app.get('*', (req, res, next) => {
@@ -50,7 +50,7 @@ app.get('*', (req, res, next) => {
 
 // const { PORT=4000, LOCAL_ADDRESS='0.0.0.0' } = process.env
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
 
   console.log('buildPath '+buildPath)
